@@ -1,15 +1,30 @@
 /*
-? Function type in TypeScript
+? Interfaces in TypeScript
 NOTES: 
-- the global type is denoted by Function in JS,
-- it describes properties like bind, apply, call and other
+- interfaces are yet another way to name Object types
  */
 
-function printCarDetails(callback: Function) {
-  callback(2021, "BMW");
+interface Car {
+  make: string;
+  model: string | number;
+  sedan: boolean;
+
+  accelerate: () => void;
+  decelerate(): void;
+}
+function printCarDetails(carObj: Car) {
+  console.log(`Car car is  ${carObj.make}`);
+  console.log(`My car was launched in ${carObj.model}`);
 }
 
-printCarDetails((model: number, make: string) => {
-  console.log("Car model is " + model);
-  console.log("Car company is " + make);
+printCarDetails({
+  make: "Tesla",
+  model: 2021,
+  sedan: false,
+  accelerate: () => {
+    console.log("accelerated the car");
+  },
+  decelerate: () => {
+    console.log("decelerate the car");
+  },
 });
