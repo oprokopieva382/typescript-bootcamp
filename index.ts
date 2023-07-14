@@ -1,25 +1,21 @@
 /*
-? Primitive types in TypeScript
+? Array types in TypeScript
+NOTES: add brackets[]
 
  */
 
-//*string type
-let a: string = "Simple text";
+const cars: string[] = ["Tesla", "BMW", "Audi"];
+const LuckyNumber: number[] = [1, 2, 3];
+const answer: boolean[] = [true, false];
 
-//*number type
-let b: number = 100;
+function printCarModels(models: number[]): number {
+  models.forEach((model) => {
+    console.log(model);
+  });
 
-//*boolean type
-let c: boolean = false;
+  let upcomingModel = models[0] + 1;
+  return upcomingModel;
+}
 
-//*null type
-let d: null = null;
-
-//*undefined type
-let e: undefined;
-
-//*bigint type
-let f: bigint = BigInt(100);
-
-//*symbol type
-let g: symbol = Symbol("name");
+let upcomingModel = printCarModels([2023, 2022, 2021]);
+console.log("next upcoming model is " + upcomingModel);
