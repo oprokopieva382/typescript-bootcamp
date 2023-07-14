@@ -1,37 +1,15 @@
 /*
-? Type Aliases in TypeScript
+? Function type in TypeScript
 NOTES: 
-- Aliases are names given to common types
-- used for reusing common types
+- the global type is denoted by Function in JS,
+- it describes properties like bind, apply, call and other
  */
 
-//Primitive type alias
-type ModelNumber =  number
-
-function printCarModel(model: ModelNumber) {
-  console.log(model);
+function printCarDetails(callback: Function) {
+  callback(2021, "BMW");
 }
 
-printCarModel(2021)
-
-//Union type alias
-type Model =  number | string
-
-//Object type alias
-type Car = {
-    make: string,
-    model: number,
-    sedan: boolean
-}
-function printCarDetails(myCar: Car) {
-  console.log(`My car is ${myCar.make}`);
-  console.log(`My car was launched in  ${myCar.model}`);
-
-  if (myCar.sedan) {
-    console.log(`My car is sedan`);
-  } else {
-    console.log(`My car is  not a sedan`);
-  }
-}
-
-printCarDetails({ model: 2021, make: "Honda", sedan:true });
+printCarDetails((model: number, make: string) => {
+  console.log("Car model is " + model);
+  console.log("Car company is " + make);
+});
