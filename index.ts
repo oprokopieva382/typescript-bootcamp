@@ -1,45 +1,37 @@
 /*
-? Union types in TypeScript
+? Type Aliases in TypeScript
 NOTES: 
-- it is a type formed from two or more types, we refer to each of this types as the union's members
-- use the pipe | operator to combine types
+- Aliases are names given to common types
+- used for reusing common types
  */
 
-function printCarModel(model: number | string) {
-  console.log("My car model is " + model);
+//Primitive type alias
+type ModelNumber =  number
+
+function printCarModel(model: ModelNumber) {
+  console.log(model);
 }
-//No Error
-printCarModel(2009);
 
-//No Error
-printCarModel("2009");
+printCarModel(2021)
 
-/*
-? Work with Union types in TypeScript
- */
+//Union type alias
+type Model =  number | string
 
-//Example 1: when members don't support common operations
-function printCarModelV2(model: string | number) {
-  //! Error - Property 'toUpperCase' does not exist on type 'string | number'.
-  //console.log("My car model is " + model.toUpperCase());
+//Object type alias
+type Car = {
+    make: string,
+    model: number,
+    sedan: boolean
+}
+function printCarDetails(myCar: Car) {
+  console.log(`My car is ${myCar.make}`);
+  console.log(`My car was launched in  ${myCar.model}`);
 
-  //* Fix - needs narrow the Union with code
-  if(typeof model === "string") {
-     console.log("My car model is " + model.toUpperCase());
+  if (myCar.sedan) {
+    console.log(`My car is sedan`);
   } else {
-     console.log("My next car model is " + model++);
+    console.log(`My car is  not a sedan`);
   }
 }
 
-//No Error
-printCarModelV2(2009)
-//No Error
-printCarModelV2("2009")
-
-//Example 2: when members support common operations
-
-function sliceTheImport(x: string[] | string) {
-
-    //* No error because both string and array have slice method
-    return x.slice(0,3)
-}
+printCarDetails({ model: 2021, make: "Honda", sedan:true });
