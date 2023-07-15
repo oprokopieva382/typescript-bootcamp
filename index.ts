@@ -51,4 +51,20 @@ function getLatestCarModelV1(models: any) {
 // function getLatestCarModelV2(models: unknown) {
 //   return models[0];
 // }
-//
+
+/*? Special type | "void"
+NOTES:
+- In JS a function that doesn't return any value will implicitly return the value undefined
+- "void" and "undefined" is not the same thing in TS
+- 
+ */
+
+//undefined | JS
+// void type| TS
+function printCarNameV1(): void {
+    console.log("BMW")
+}
+
+let result = function printCarNameV2(): void {
+  console.log("BMW");
+}
