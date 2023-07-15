@@ -35,3 +35,20 @@ carT = "BMW";
 
 //Even assigning it to wrong type will not cause error
 const myCar: number = carT
+
+/*
+? Special type | "unknown"
+NOTES:
+- little safer than "any" type, but similar to any
+ */
+
+let a: unknown = document.getElementById("my-element");
+//we can do whatever we want with any type
+function getLatestCarModelV1(models: any) {
+    return models[0]
+}
+//but we cannot do whatever we want with unknown type
+// function getLatestCarModelV2(models: unknown) {
+//   return models[0];
+// }
+//
