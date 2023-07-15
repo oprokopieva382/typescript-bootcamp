@@ -1,30 +1,18 @@
 /*
-? Interfaces in TypeScript
+? Object in TypeScript
 NOTES: 
-- interfaces are yet another way to name Object types
+
  */
 
-interface Car {
+type Car = {
   make: string;
-  model: string | number;
-  sedan: boolean;
+  model: number;
+};
 
-  accelerate: () => void;
-  decelerate(): void;
-}
+//object as argument
 function printCarDetails(carObj: Car) {
-  console.log(`Car car is  ${carObj.make}`);
-  console.log(`My car was launched in ${carObj.model}`);
-}
+  console.log(`My car was launch in  ${carObj.model}`);
 
-printCarDetails({
-  make: "Tesla",
-  model: 2021,
-  sedan: false,
-  accelerate: () => {
-    console.log("accelerated the car");
-  },
-  decelerate: () => {
-    console.log("decelerate the car");
-  },
-});
+  console.log(`My car manufacture is  ${carObj.make.toLocaleUpperCase()}`);
+}
+printCarDetails({ make: "Tesla", model: 2021 });
