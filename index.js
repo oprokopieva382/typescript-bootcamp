@@ -1,6 +1,19 @@
 "use strict";
-function printCarDetails(carObj) {
-    console.log("My car was launch in  ".concat(carObj.model));
-    console.log("My car manufacture is  ".concat(carObj.make.toLocaleUpperCase()));
+function printPlaneDetails(plane, listCountries) {
+    console.log("Plane manufacturer is " + plane.make.toUpperCase());
+    console.log("Plane was launched in " + plane.model);
+    if (plane.isJet) {
+        console.log("Plane is a Jet");
+    }
+    else {
+        console.log("Plane is not a Jet");
+    }
+    console.log("The plane flies in the below countries");
+    console.log("----------------------");
+    listCountries(["UA", "US", "UK"]);
 }
-printCarDetails({ make: "Tesla", model: 2021 });
+printPlaneDetails({ make: "Delta AirLine", model: 2021, isJet: false }, function (countries) {
+    countries.forEach(function (country) {
+        console.log(country);
+    });
+});
