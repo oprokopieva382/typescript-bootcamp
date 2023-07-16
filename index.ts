@@ -59,5 +59,17 @@ const raceCar: RaceCarTuple = [2023, "BMW"]
 
 
 /*? Array assertion interface
+NOTES:
+- will make a readonly
  */
 let carDetails = [2023, "BMW"] as const
+
+/*? Specifying rest parameters in Tuple
+NOTES:
+- Tuple with rest parameter elements (must be Array/Tuple)
+ */
+
+function printCardetails2(myCar3: [number, string, ...number[]]) {
+    console.log(myCar3[3])
+}
+printCardetails2([2023, "Tesla", 234, 345, 456])

@@ -1,19 +1,14 @@
 "use strict";
-function printPlaneDetails(plane, listCountries) {
-    console.log("Plane manufacturer is " + plane.make.toUpperCase());
-    console.log("Plane was launched in " + plane.model);
-    if (plane.isJet) {
-        console.log("Plane is a Jet");
-    }
-    else {
-        console.log("Plane is not a Jet");
-    }
-    console.log("The plane flies in the below countries");
-    console.log("----------------------");
-    listCountries(["UA", "US", "UK"]);
+var myCar = [2023, "Tesla", true];
+function printCarDetails(myCar) {
+    var model = myCar[0], make = myCar[1], sedan = myCar[2];
 }
-printPlaneDetails({ make: "Delta AirLine", model: 2021, isJet: false }, function (countries) {
-    countries.forEach(function (country) {
-        console.log(country);
-    });
-});
+printCarDetails([2023, "Tesla", true]);
+var myCar2 = [2023, "BMW", true, "US"];
+var myPlane = [2023, "Delta Airline"];
+var raceCar = [2023, "BMW"];
+var carDetails = [2023, "BMW"];
+function printCardetails2(myCar3) {
+    console.log(myCar3[3]);
+}
+printCardetails2([2023, "Tesla", 234, 345, 456]);
