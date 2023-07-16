@@ -56,3 +56,8 @@ const raceCar: RaceCarTuple = [2023, "BMW"]
 
 //! Error - Cannot assign to '1' because it is a read-only property.
 //raceCar[1]= "Tesla"
+
+
+/*? Array assertion interface
+ */
+let carDetails = [2023, "BMW"] as const
