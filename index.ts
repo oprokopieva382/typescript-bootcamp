@@ -36,8 +36,14 @@ interface CarDetailsTuple {
     1: string;
     2: boolean
     3: "UA" | "US"
-
-
 }
 
 const myCar2: CarDetailsTuple = [2023, "BMW", true, "US"]
+
+/*? Tuple with Optional properties
+NOTES:
+- Tuple with optional property (only allowed at the end)
+ */
+
+type PlaneDetainsTuple = [number, string, boolean?];
+const myPlane: PlaneDetainsTuple=[2023, "Delta Airline"]
