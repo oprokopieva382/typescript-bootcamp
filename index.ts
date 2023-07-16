@@ -47,3 +47,12 @@ NOTES:
 
 type PlaneDetainsTuple = [number, string, boolean?];
 const myPlane: PlaneDetainsTuple=[2023, "Delta Airline"]
+
+/*? Readonly Tuple 
+ */
+
+type RaceCarTuple = readonly [number, string];
+const raceCar: RaceCarTuple = [2023, "BMW"]
+
+//! Error - Cannot assign to '1' because it is a read-only property.
+//raceCar[1]= "Tesla"
