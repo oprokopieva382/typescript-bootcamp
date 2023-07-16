@@ -1,20 +1,9 @@
-/*? Type Assertion (the "as" keyword)
+/*? Impossible  coercions// принуждение
 NOTES:
-- we can assert certain types when TS can't understand what type can be assigned
+- TS only allows type assertions which convert to a more specific or less specific version of a type
+- This rule prevents "impossible" coercions
  */
+//Possible but not recommended 
+const car1 = ("Ford" as any) as number
+const car2 = ("Ford" as unknown) as number
 
-const myCanvas = document.getElementById("my-canvas") as HTMLCanvasElement
-
-/*? Non-null Assertion Operator (postfix !) 
-NOTES:
-- when we access null type, TS complains in strict mode
-- to prevent it we can use ! operator
- */
-
-function printCarDetails(model: number | null) {
-  //! Error - 'model' is possibly 'null'
-  //console.log(`My car is ${model.toString()}`);
-  //*OK
-  console.log(`My car is ${model!.toString()}`);
-}
-printCarDetails;(2021)
